@@ -9,12 +9,13 @@ public interface IndividualDao {
 
     //create
     void add (Individual individual);
-    void addIndividualToOrganization(Individual individual, Organization organization);
+    //void addIndividualToOrganization(Individual individual, Organization organization);
 
     //read
-    List<Individual> getAll();
+    //List<Individual> getAll();
 
     //update
+    //later
 
     //destroy
     void deleteById(int id);

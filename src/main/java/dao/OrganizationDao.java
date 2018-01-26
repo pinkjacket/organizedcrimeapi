@@ -12,10 +12,11 @@ public interface OrganizationDao {
 
 
     //read
-    List<Organization> getAll();
-    List<Individual> getAllIndividualsForOrganization();
+    //List<Organization> getAll();
+    //List<Individual> getAllIndividualsForOrganization();
 
     //update
+    //later
 
     //destroy
     void deleteById(int id);
