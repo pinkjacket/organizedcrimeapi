@@ -8,9 +8,10 @@ public class Individual {
     private int id;
     private int organizationId;
 
-    public Individual(String name, String description) {
+    public Individual(String name, String description, int organizationId) {
         this.name = name;
         this.description = description;
+        this.organizationId = organizationId;
     }
 
     public String getName() {
