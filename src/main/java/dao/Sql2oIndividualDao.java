@@ -16,7 +16,7 @@ public class Sql2oIndividualDao implements IndividualDao {
     @Override
     public void add(Individual individual) {
 
-        String sql = "INSERT INTO individuals (name, description, organizationid) VALUES (:name, :description, :organizationid)";
+        String sql = "INSERT INTO individuals (name, description, organizationid) VALUES (:name, :description, :organizationId)";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql)
                     .bind(individual)
