@@ -12,6 +12,7 @@ public interface IndividualDao {
     //void addIndividualToOrganization(Individual individual, Organization organization);
 
     //read
+    List<Individual> getAllIndividualsForOrganization(int organizationId);
     //List<Individual> getAll();
 
     //update

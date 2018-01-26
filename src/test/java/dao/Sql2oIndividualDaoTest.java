@@ -40,7 +40,13 @@ public class Sql2oIndividualDaoTest {
     }
 
     @Test
-    public void deleteById() {
+    public void deleteById() throws Exception {
+        Organization testOrganization = setupOrganization();
+        organizationDao.add(testOrganization);
+        Individual testIndividual = new Individual("Kiryu Kazuma", "The Dragon of Dojima", testOrganization.getId());
+        individualDao.add(testIndividual);
+        individualDao.deleteById(testIndividual.getId());
+        assertEquals(1, individualDao.getAllIndividualsForOrganization(testOrganization.getId()).size());
     }
 
     public Organization setupOrganization() {
