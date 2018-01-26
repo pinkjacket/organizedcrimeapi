@@ -46,7 +46,7 @@ public class Sql2oIndividualDaoTest {
         Individual testIndividual = new Individual("Kiryu Kazuma", "The Dragon of Dojima", testOrganization.getId());
         individualDao.add(testIndividual);
         individualDao.deleteById(testIndividual.getId());
-        assertEquals(1, individualDao.getAllIndividualsForOrganization(testOrganization.getId()).size());
+        assertEquals(0, individualDao.getAllIndividualsForOrganization(testOrganization.getId()).size());
     }
 
     public Organization setupOrganization() {
