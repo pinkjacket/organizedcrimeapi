@@ -12,8 +12,9 @@ public interface OrganizationDao {
 
 
     //read
-    //List<Organization> getAll();
+    List<Organization> getAll();
     //List<Individual> getAllIndividualsForOrganization();
+    Organization findById(int id);
 
     //update
     //later

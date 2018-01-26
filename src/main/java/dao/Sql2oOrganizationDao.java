@@ -5,6 +5,8 @@ import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
 
+import java.util.List;
+
 public class Sql2oOrganizationDao implements OrganizationDao {
 
     private final Sql2o sql2o;
@@ -29,6 +31,14 @@ public class Sql2oOrganizationDao implements OrganizationDao {
     }
 
     @Override
+    public List<Organization> getAll() {
+        try(Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM organizations")
+                    .executeAndFetch(Organization.class);
+        }
+    }
+
+    @Override
     public void deleteById(int id) {
         String sql = "DELETE from organizations WHERE id=:id";
         try (Connection con = sql2o.open()) {
@@ -37,6 +47,15 @@ public class Sql2oOrganizationDao implements OrganizationDao {
                     .executeUpdate();
         } catch (Sql2oException ex) {
             System.out.println(ex);
+        }
+    }
+
+    @Override
+    public Organization findById(int id) {
+        try(Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM organizations WHERE id = :id")
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Organization.class);
         }
     }
 }
