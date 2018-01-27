@@ -43,7 +43,7 @@ public class Sql2oOrganizationDaoTest {
         organizationDao.deleteById(testOrganization.getId());
         assertEquals(0, organizationDao.getAll().size());
     }
-    
+
 
     @Test
     public void getAllGetsAll() throws Exception {
