@@ -14,12 +14,36 @@ For now there's just organizations and individuals. Individuals get a name and a
 
 Currently it's only set up as far as organizations working properly through Postman, an example of which can be seen here https://imgur.com/a/gxwl1
 
+## Data Models
+
+* _Organization_
+  * _name (Yakuza)_
+  * _truename (The Extreme Path)_
+  * _location (Japan)_
+  * _membership (roughly 102,000)_
+  * _govtrelationship (cozy)_
+
+* _Individual (not currently routed)_
+  * _name (Kiryu Kazuma)_
+  * _description (The Dragon of Dojima)_
+
+## Endpoints
+
+* _/organizations_
+  * GET to list all organizations
+* _/organizations/:id_
+  * GET with number in place of :id to view details of corresponding organization
+* _/organizations/new_
+ * POST to using the above data model to create and store a new organization
+
 ## Setup/Installation Requirements
 
 * _Clone from github_
 * _open in IntelliJ_
 * _Run App_
-* _Navigate to localhost and interact with program using Postman
+* _Open Postman_
+* _Navigate to endpoint urls and GET to read existing information or POST following the model to create new data_
+* _Further explanation of Postman can be found here https://www.learnhowtoprogram.com/java/api-development-extended-topics/jadle-frontend-json-gson-and-postman_
 
 ## Known Bugs
 
